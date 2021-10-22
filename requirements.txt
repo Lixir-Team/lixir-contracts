@@ -1,0 +1,7 @@
+hypothesis==5.41.3
+fixedint
+mod
+sympy==1.8
+fxpmath==0.4.0
+black==19.10b0
+eth-brownie

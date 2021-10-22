@@ -1,0 +1,29 @@
+# use Ganache's forked mainnet mode as the default network
+networks:
+  default: development
+  development:
+    timeout: 1800
+    cmd_settings:
+      default_balance: 100000
+
+autofetch_sources: true
+
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts@3.4.1-solc-0.7
+  - Uniswap/uniswap-v3-core@1.0.0
+  - Uniswap/uniswap-v3-periphery@1.0.0
+
+# path remapping to support OpenZepplin imports with NPM-style path
+compiler:
+  solc:
+    version: 0.7.6
+    remappings:
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.1-solc-0.7"
+      - "@uniswap/v3-core=Uniswap/uniswap-v3-core@1.0.0"
+      - "@uniswap/v3-periphery=Uniswap/uniswap-v3-periphery@1.0.0"
+
+reports:
+  exclude_contracts:
+    - SafeMath
+    - SafeERC20
+    - Address
